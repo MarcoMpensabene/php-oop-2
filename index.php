@@ -26,14 +26,14 @@ $productUrl6 = $urlList[5];
 $productUrl7 =  $urlList[6];
 $productUrl8 = $urlList[7];
 
-$prodotto1 = new Foods("Royal Canin Mini Adult", new Categories("dog", "doggo"), "43.99",  $productUrl1, "prosciutto e riso", "545");
-$prodotto2 = new Foods("Almo Nature Holistic Maintenance", new Categories("cat", "catto"), "44.99", $productUrl2, "manzo e cereali", "600");
-$prodotto3 = new Foods("Almo daily menu cat ", new Categories("dog", "doggo"), "34.99",  $productUrl3, "pollo , tonno , prosciutto", "400");
-$prodotto4 = new Foods("Mangime per Pesci Guppy in Fioccgu", new Categories("fish", "catto"), "2,95", $productUrl4, "Pesci e sottoprodotti dei pesci , Cereali , lieviti , Alghe", "30");
-$prodotto5 = new Accessories("Voliera Wilma in Legno ", new Categories("bird", "doggo"), "184,99",  $productUrl5, "M: L 83x P 67 x H 153 cm", "Legno");
-$prodotto6 = new Accessories("Cartucce Filtranti per Filtro EasyCrystal", new Categories("fish", "catto"), "2,29", $productUrl6, "ND", "Materiale Espanso");
-$prodotto7 = new Games("Kong Classic ", new Categories("dog", "doggo"), "13.49",  $productUrl7, "Galleggia e rimbalza", "8,5 cm x 10 cm");
-$prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"), "4,99", $productUrl8, "Morbido con la codina in corda", "8,5 cm x 10 cm");
+$prodotto1 = new Foods("Royal Canin Mini Adult", new Categories("dog", "Cane"), "43.99",  $productUrl1, "prosciutto e riso", "545");
+$prodotto2 = new Foods("Almo Nature Holistic Maintenance", new Categories("dog", "Cane"), "44.99", $productUrl2, "manzo e cereali", "600");
+$prodotto3 = new Foods("Almo daily menu cat ", new Categories("cat", "Gatto"), "34.99",  $productUrl3, "pollo , tonno , prosciutto", "400");
+$prodotto4 = new Foods("Mangime per Pesci Guppy in Fioccgu", new Categories("fish", "Pesce"), "2,95", $productUrl4, "Pesci e sottoprodotti dei pesci , Cereali , lieviti , Alghe", "30");
+$prodotto5 = new Accessories("Voliera Wilma in Legno ", new Categories("kiwi-bird", "Uccello"), "184,99",  $productUrl5, "M: L 83x P 67 x H 153 cm", "Legno");
+$prodotto6 = new Accessories("Cartucce Filtranti per Filtro EasyCrystal", new Categories("fish", "Pesce"), "2,29", $productUrl6, "ND", "Materiale Espanso");
+$prodotto7 = new Games("Kong Classic ", new Categories("dog", "Cane"), "13.49",  $productUrl7, "Galleggia e rimbalza", "8,5 cm x 10 cm");
+$prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "Gatto"), "4,99", $productUrl8, "Morbido con la codina in corda", "8,5 cm x 10 cm");
 
 // var_dump($prodotto1);
 // var_dump($prodotto2);
@@ -52,6 +52,7 @@ $prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -60,16 +61,19 @@ $prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"
     </header>
     <main class="container">
         <div class="row">
-            <p class="col-12">
-                Ours Splendid Animals Product
-            </p>
+            <h2 class="col-12">
+                I nostri Prodotti
+            </h2>
             <article class="col-4 mb-3">
                 <div class=" card h-100 ">
                     <img src=" <?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body ">
                         <h2> <?php echo $prodotto1->getName() ?></h2>
-                        <p> Categories empty for now </p>
-                        <p>Price : <?php echo $prodotto1->getPrice() ?> $</p>
+                        <div class="mb-2">
+                            <i class="fa-solid fa-<?php echo $prodotto1->getCategories()->getIcon(); ?>"></i>
+                            <span><?php echo $prodotto1->getCategories()->getName(); ?></span>
+                        </div>
+                        <p>Price : <?php echo $prodotto1->getPrice() ?> €</p>
                         <p class="card-text">Ingredienti : <?php echo $prodotto1->getIngridients() ?></p>
                         <p> Peso : <?php echo $prodotto1->getWeight() ?> g</p>
                     </div>
@@ -80,8 +84,11 @@ $prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"
                     <img src="<?php echo $prodotto2->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body flex-grow-1">
                         <h2> <?php echo $prodotto2->getName() ?></h2>
-                        <p> Categories empty for now </p>
-                        <p>Price : <?php echo $prodotto2->getPrice() ?> $</p>
+                        <div class="mb-2">
+                            <i class="fa-solid fa-<?php echo $prodotto2->getCategories()->getIcon(); ?>"></i>
+                            <span><?php echo $prodotto2->getCategories()->getName(); ?></span>
+                        </div>
+                        <p>Price : <?php echo $prodotto2->getPrice() ?>€</p>
                         <p class="card-text">Ingredienti : <?php echo $prodotto2->getIngridients() ?></p>
                         <p> Peso : <?php echo $prodotto2->getWeight() ?> g</p>
                     </div>
@@ -92,8 +99,11 @@ $prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"
                     <img src="<?php echo $prodotto3->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h2> <?php echo $prodotto3->getName() ?></h2>
-                        <p> Categories empty for now </p>
-                        <p>Price : <?php echo $prodotto3->getPrice() ?> $</p>
+                        <div class="mb-2">
+                            <i class="fa-solid fa-<?php echo $prodotto3->getCategories()->getIcon(); ?>"></i>
+                            <span><?php echo $prodotto3->getCategories()->getName(); ?></span>
+                        </div>
+                        <p>Price : <?php echo $prodotto3->getPrice() ?>€</p>
                         <p class="card-text">Ingredienti : <?php echo $prodotto3->getIngridients() ?></p>
                         <p> Peso : <?php echo $prodotto3->getWeight() ?> g</p>
                     </div>
@@ -104,8 +114,11 @@ $prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"
                     <img src="<?php echo $prodotto4->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h2> <?php echo $prodotto4->getName() ?></h2>
-                        <p> Categories empty for now </p>
-                        <p>Price : <?php echo $prodotto4->getPrice() ?> $</p>
+                        <div class="mb-2">
+                            <i class="fa-solid fa-<?php echo $prodotto4->getCategories()->getIcon(); ?>"></i>
+                            <span><?php echo $prodotto4->getCategories()->getName(); ?></span>
+                        </div>
+                        <p>Price : <?php echo $prodotto4->getPrice() ?> €</p>
                         <p class="card-text">Ingredienti : <?php echo $prodotto4->getIngridients() ?></p>
                         <p> Peso : <?php echo $prodotto4->getWeight() ?> g</p>
                     </div>
@@ -116,8 +129,11 @@ $prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"
                     <img src="<?php echo $prodotto5->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h2> <?php echo $prodotto5->getName() ?></h2>
-                        <p> Categories empty for now </p>
-                        <p>Price : <?php echo $prodotto5->getPrice()  ?>$</p>
+                        <div class="mb-2">
+                            <i class="fa-solid fa-<?php echo $prodotto5->getCategories()->getIcon(); ?>"></i>
+                            <span><?php echo $prodotto5->getCategories()->getName(); ?></span>
+                        </div>
+                        <p>Price : <?php echo $prodotto5->getPrice()  ?>€</p>
                         <p>Materiale : <?php echo $prodotto5->getMaterials() ?></p>
                         <p class="card-text"> Dimensioni : <?php echo $prodotto5->getDimension() ?></p>
                     </div>
@@ -128,8 +144,11 @@ $prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"
                     <img src="<?php echo $prodotto6->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h2> <?php echo $prodotto6->getName() ?></h2>
-                        <p> Categories empty for now </p>
-                        <p>Price : <?php echo $prodotto6->getPrice()  ?>$</p>
+                        <div class="mb-2">
+                            <i class="fa-solid fa-<?php echo $prodotto6->getCategories()->getIcon(); ?>"></i>
+                            <span><?php echo $prodotto6->getCategories()->getName(); ?></span>
+                        </div>
+                        <p>Price : <?php echo $prodotto6->getPrice()  ?>€</p>
                         <p>Materiale : <?php echo $prodotto6->getMaterials() ?></p>
                         <p class="card-text"> Dimensioni : <?php echo $prodotto6->getDimension() ?></p>
                     </div>
@@ -140,8 +159,11 @@ $prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"
                     <img src="<?php echo $prodotto7->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h2> <?php echo $prodotto7->getName() ?></h2>
-                        <p> Categories empty for now </p>
-                        <p>Price : <?php echo $prodotto7->getPrice() ?> $</p>
+                        <div class="mb-2">
+                            <i class="fa-solid fa-<?php echo $prodotto7->getCategories()->getIcon(); ?>"></i>
+                            <span><?php echo $prodotto7->getCategories()->getName(); ?></span>
+                        </div>
+                        <p>Price : <?php echo $prodotto7->getPrice() ?> €</p>
                         <p> Caratteristica : <?php echo $prodotto7->getFeature() ?></p>
                         <p class="card-text"> Dimensioni : <?php echo $prodotto7->getDimension() ?></p>
                     </div>
@@ -152,8 +174,11 @@ $prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"
                     <img src="<?php echo $prodotto8->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h2> <?php echo $prodotto8->getName() ?></h2>
-                        <p> Categories empty for now </p>
-                        <p>Price : <?php echo $prodotto8->getPrice() ?> $</p>
+                        <div class="mb-2">
+                            <i class="fa-solid fa-<?php echo $prodotto8->getCategories()->getIcon(); ?>"></i>
+                            <span><?php echo $prodotto8->getCategories()->getName(); ?></span>
+                        </div>
+                        <p>Price : <?php echo $prodotto8->getPrice() ?> €</p>
                         <p>Caratteristica : <?php echo $prodotto8->getFeature() ?></p>
                         <p class="card-text"> Dimensioni : <?php echo $prodotto8->getDimension() ?></p>
                     </div>

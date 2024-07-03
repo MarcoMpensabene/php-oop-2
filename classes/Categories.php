@@ -6,7 +6,7 @@ class Categories
     private $icon;
 
 
-    public function __construct($name, $icon)
+    public function __construct($icon, $name)
     {
         $this->name = $name;
         $this->icon = $icon;
@@ -23,7 +23,7 @@ class Categories
 
     public function getIcon()
     {
-        return $this->name;
+        return $this->icon;
     }
     public function setIcon($icon)
     {

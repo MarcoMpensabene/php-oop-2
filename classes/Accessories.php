@@ -1,28 +1,28 @@
 <?php
 class Accessories extends Products
 {
-    private $type;
+    private $dimension;
     private $materials;
 
-    public function __construct($name, Categories $categories, $price, $productImg,  $type, $materials)
+    public function __construct($name, Categories $categories, $price, $productImg,  $dimension, $materials)
     {
         parent::__construct($name, $categories, $price, $productImg);
-        $this->type = $type;
+        $this->dimension = $dimension;
         $this->materials = $materials;
     }
 
-    public function getType()
+    public function getDimension()
     {
-        return  $this->type;
+        return  $this->dimension;
     }
-    public function setType($type)
+    public function setDimension($dimension)
     {
-        return  $this->type = $type;
+        return  $this->dimension = $dimension;
     }
 
     public function getMaterials()
     {
-        return  $this->type;
+        return  $this->materials;
     }
     public function setMaterials($materials)
     {

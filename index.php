@@ -5,9 +5,36 @@ require_once __DIR__ . "/classes/Games.php";
 require_once __DIR__ . "/classes/Accessories.php";
 require_once __DIR__ . "/classes/Categories.php";
 
+$urlList = [
+    "https://arcaplanet.vtexassets.com/arquivos/ids/300306/Royal-Canin-Mini-Adult-Alimento-Completo-per-Cani-Adulti-di-Piccola-Taglia-10120604-1.jpg",
+    "https://arcaplanet.vtexassets.com/arquivos/ids/300514/Almo-Nature-Holistic-Maintenance-Medium-Large-Tonno-e-Riso-10118806.jpg",
+    "https://arcaplanet.vtexassets.com/arquivos/ids/245336/almo-daily-menu-cat-400-gr-vitello.jpg",
+    "https://arcaplanet.vtexassets.com/arquivos/ids/272714/tetra-guppy-mini-flakes.jpg",
+    "https://arcaplanet.vtexassets.com/arquivos/ids/258384/voliera-wilma1.jpg",
+    "https://arcaplanet.vtexassets.com/arquivos/ids/272741/tetra-easycrystal-filterpack-250-300.jpg",
+    "https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg",
+    "https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg"
+];
+//var_dump($urlList);
 
-$prodotto1 = new Games("Palla rimbalzante ", new Categories("cane", "doggo"), "14.99", "https://arcaplanet.vtexassets.com/arquivos/ids/300306/Royal-Canin-Mini-Adult-Alimento-Completo-per-Cani-Adulti-di-Piccola-Taglia-10120604-1.jpg", "palla di gomma che rimbalza");
-$prodotto2 = new Foods("cibo per gatti ducky-duck", new Categories("gatto", "catto"), "2,99", "https://arcaplanet.vtexassets.com/arquivos/ids/300306/Royal-Canin-Mini-Adult-Alimento-Completo-per-Cani-Adulti-di-Piccola-Taglia-10120604-1.jpg", "carne di manzo e vitello", "200gr");
+$productUrl1 =  $urlList[0];
+$productUrl2 = $urlList[1];
+$productUrl3 =  $urlList[2];
+$productUrl4 = $urlList[3];
+$productUrl5 =  $urlList[4];
+$productUrl6 = $urlList[5];
+$productUrl7 =  $urlList[6];
+$productUrl8 = $urlList[7];
+
+$prodotto1 = new Foods("Royal Canin Mini Adult", new Categories("dog", "doggo"), "43.99",  $productUrl1, "prosciutto e riso", "545");
+$prodotto2 = new Foods("Almo Nature Holistic Maintenance", new Categories("cat", "catto"), "44.99", $productUrl2, "manzo e cereali", "600");
+$prodotto3 = new Foods("Almo daily menu cat ", new Categories("dog", "doggo"), "34.99",  $productUrl3, "pollo , tonno , prosciutto", "400");
+$prodotto4 = new Foods("Mangime per Pesci Guppy in Fioccgu", new Categories("fish", "catto"), "2,95", $productUrl4, "Pesci e sottoprodotti dei pesci , Cereali , lieviti , Alghe", "30");
+$prodotto5 = new Accessories("Voliera Wilma in Legno ", new Categories("bird", "doggo"), "184,99",  $productUrl5, "M: L 83x P 67 x H 153 cm", "Legno");
+$prodotto6 = new Accessories("Cartucce Filtranti per Filtro EasyCrystal", new Categories("fish", "catto"), "2,29", $productUrl6, "ND", "Materiale Espanso");
+$prodotto7 = new Games("Kong Classic ", new Categories("dog", "doggo"), "13.49",  $productUrl7, "Galleggia e rimbalza", "8,5 cm x 10 cm");
+$prodotto8 = new Games("Topini di peluche Trixie", new Categories("cat", "catto"), "4,99", $productUrl8, "Morbido con la codina in corda", "8,5 cm x 10 cm");
+
 // var_dump($prodotto1);
 // var_dump($prodotto2);
 
@@ -37,90 +64,98 @@ $prodotto2 = new Foods("cibo per gatti ducky-duck", new Categories("gatto", "cat
                 Ours Splendid Animals Product
             </p>
             <article class="col-4 mb-3">
-                <div class="card">
-                    <img src="<?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
+                <div class=" card h-100 ">
+                    <img src=" <?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
+                    <div class="card-body ">
                         <h2> <?php echo $prodotto1->getName() ?></h2>
-                        <h3> Categories empty for now </h3>
-                        <p>Price : <?php echo $prodotto1->getPrice() ?></p>
-                        <p class="card-text"><?php echo $prodotto1->getFeature() ?></p>
-                    </div>
-                </div>
-            </article>
-            <article class="col-4">
-                <div class="card">
-                    <img src="<?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h2> <?php echo $prodotto1->getName() ?></h2>
-                        <h3> Categories empty for now </h3>
-                        <p>Price : <?php echo $prodotto1->getPrice() ?></p>
-                        <p class="card-text"><?php echo $prodotto1->getFeature() ?></p>
-                    </div>
-                </div>
-            </article>
-            <article class="col-4">
-                <div class="card">
-                    <img src="<?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h2> <?php echo $prodotto1->getName() ?></h2>
-                        <h3> Categories empty for now </h3>
-                        <p>Price : <?php echo $prodotto1->getPrice() ?></p>
-                        <p class="card-text"><?php echo $prodotto1->getFeature() ?></p>
+                        <p> Categories empty for now </p>
+                        <p>Price : <?php echo $prodotto1->getPrice() ?> $</p>
+                        <p class="card-text">Ingredienti : <?php echo $prodotto1->getIngridients() ?></p>
+                        <p> Peso : <?php echo $prodotto1->getWeight() ?> g</p>
                     </div>
                 </div>
             </article>
             <article class="col-4 mb-3">
-                <div class="card">
-                    <img src="<?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h2> <?php echo $prodotto1->getName() ?></h2>
-                        <h3> Categories empty for now </h3>
-                        <p>Price : <?php echo $prodotto1->getPrice() ?></p>
-                        <p class="card-text"><?php echo $prodotto1->getFeature() ?></p>
+                <div class="card h-100 ">
+                    <img src="<?php echo $prodotto2->getImg(); ?>" class="card-img-top" alt="...">
+                    <div class="card-body flex-grow-1">
+                        <h2> <?php echo $prodotto2->getName() ?></h2>
+                        <p> Categories empty for now </p>
+                        <p>Price : <?php echo $prodotto2->getPrice() ?> $</p>
+                        <p class="card-text">Ingredienti : <?php echo $prodotto2->getIngridients() ?></p>
+                        <p> Peso : <?php echo $prodotto2->getWeight() ?> g</p>
                     </div>
                 </div>
             </article>
-            <article class="col-4">
-                <div class="card">
-                    <img src="<?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
+            <article class="col-4 mb-3">
+                <div class="card h-100">
+                    <img src="<?php echo $prodotto3->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h2> <?php echo $prodotto1->getName() ?></h2>
-                        <h3> Categories empty for now </h3>
-                        <p>Price : <?php echo $prodotto1->getPrice() ?></p>
-                        <p class="card-text"><?php echo $prodotto1->getFeature() ?></p>
+                        <h2> <?php echo $prodotto3->getName() ?></h2>
+                        <p> Categories empty for now </p>
+                        <p>Price : <?php echo $prodotto3->getPrice() ?> $</p>
+                        <p class="card-text">Ingredienti : <?php echo $prodotto3->getIngridients() ?></p>
+                        <p> Peso : <?php echo $prodotto3->getWeight() ?> g</p>
                     </div>
                 </div>
             </article>
-            <article class="col-4">
-                <div class="card">
-                    <img src="<?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
+            <article class="col-4 mb-3">
+                <div class="card h-100">
+                    <img src="<?php echo $prodotto4->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h2> <?php echo $prodotto1->getName() ?></h2>
-                        <h3> Categories empty for now </h3>
-                        <p>Price : <?php echo $prodotto1->getPrice() ?></p>
-                        <p class="card-text"><?php echo $prodotto1->getFeature() ?></p>
+                        <h2> <?php echo $prodotto4->getName() ?></h2>
+                        <p> Categories empty for now </p>
+                        <p>Price : <?php echo $prodotto4->getPrice() ?> $</p>
+                        <p class="card-text">Ingredienti : <?php echo $prodotto4->getIngridients() ?></p>
+                        <p> Peso : <?php echo $prodotto4->getWeight() ?> g</p>
                     </div>
                 </div>
             </article>
-            <article class="col-4">
-                <div class="card">
-                    <img src="<?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
+            <article class="col-4 mb-3">
+                <div class="card h-100">
+                    <img src="<?php echo $prodotto5->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h2> <?php echo $prodotto1->getName() ?></h2>
-                        <h3> Categories empty for now </h3>
-                        <p>Price : <?php echo $prodotto1->getPrice() ?></p>
-                        <p class="card-text"><?php echo $prodotto1->getFeature() ?></p>
+                        <h2> <?php echo $prodotto5->getName() ?></h2>
+                        <p> Categories empty for now </p>
+                        <p>Price : <?php echo $prodotto5->getPrice()  ?>$</p>
+                        <p>Materiale : <?php echo $prodotto5->getMaterials() ?></p>
+                        <p class="card-text"> Dimensioni : <?php echo $prodotto5->getDimension() ?></p>
                     </div>
                 </div>
             </article>
-            <article class="col-4">
-                <div class="card">
-                    <img src="<?php echo $prodotto1->getImg(); ?>" class="card-img-top" alt="...">
+            <article class="col-4 mb-3">
+                <div class="card h-100">
+                    <img src="<?php echo $prodotto6->getImg(); ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h2> <?php echo $prodotto1->getName() ?></h2>
-                        <h3> Categories empty for now </h3>
-                        <p>Price : <?php echo $prodotto1->getPrice() ?></p>
-                        <p class="card-text"><?php echo $prodotto1->getFeature() ?></p>
+                        <h2> <?php echo $prodotto6->getName() ?></h2>
+                        <p> Categories empty for now </p>
+                        <p>Price : <?php echo $prodotto6->getPrice()  ?>$</p>
+                        <p>Materiale : <?php echo $prodotto6->getMaterials() ?></p>
+                        <p class="card-text"> Dimensioni : <?php echo $prodotto6->getDimension() ?></p>
+                    </div>
+                </div>
+            </article>
+            <article class="col-4 mb-3">
+                <div class="card h-100">
+                    <img src="<?php echo $prodotto7->getImg(); ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2> <?php echo $prodotto7->getName() ?></h2>
+                        <p> Categories empty for now </p>
+                        <p>Price : <?php echo $prodotto7->getPrice() ?> $</p>
+                        <p> Caratteristica : <?php echo $prodotto7->getFeature() ?></p>
+                        <p class="card-text"> Dimensioni : <?php echo $prodotto7->getDimension() ?></p>
+                    </div>
+                </div>
+            </article>
+            <article class="col-4 mb-3">
+                <div class="card h-100">
+                    <img src="<?php echo $prodotto8->getImg(); ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h2> <?php echo $prodotto8->getName() ?></h2>
+                        <p> Categories empty for now </p>
+                        <p>Price : <?php echo $prodotto8->getPrice() ?> $</p>
+                        <p>Caratteristica : <?php echo $prodotto8->getFeature() ?></p>
+                        <p class="card-text"> Dimensioni : <?php echo $prodotto8->getDimension() ?></p>
                     </div>
                 </div>
             </article>

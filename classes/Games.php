@@ -3,9 +3,9 @@ class Games extends Products
 {
     private $feature;
 
-    public function __construct($name, $categories, $price, $feature)
+    public function __construct($name, Categories $categories, $price, $productImg,  $feature)
     {
-        parent::__construct($name, $categories, $price);
+        parent::__construct($name, $categories, $price, $productImg);
         $this->feature = $feature;
     }
 

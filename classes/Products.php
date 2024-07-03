@@ -1,19 +1,19 @@
 <?php
-require_once __DIR__ . "/Foods.php";
-require_once __DIR__ . "/Games.php";
-require_once __DIR__ . "/Accessories.php";
+
 
 class Products
 {
     private $name;
     private $categories;
     private $price;
+    private $productImg;
 
-    public function __construct(string $name, $categories,  string $price)
+    public function __construct(string $name, Categories $categories,  string $price, $productImg)
     {
         $this->name = $name;
         $this->categories = $categories;
         $this->price = $price;
+        $this->productImg = $productImg;
     }
 
     public function getName()
@@ -42,5 +42,14 @@ class Products
     public function setPrice($price)
     {
         return $this->price = $price;
+    }
+
+    public function getImg()
+    {
+        return $this->productImg;
+    }
+    public function setImg($productImg)
+    {
+        return $this->productImg = $productImg;
     }
 }

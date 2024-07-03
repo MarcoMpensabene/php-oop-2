@@ -2,16 +2,31 @@
 
 class Categories
 {
-    private $dog = "Dog";
-    private $cat = "Cat";
-    private $bird = "Bird";
-    private $fish = "Fish";
+    private  $name;
+    private $icon;
 
-    public function __construct($dog, $cat, $bird, $fish)
+
+    public function __construct($name, $icon)
     {
-        $this->dog = $dog;
-        $this->cat = $cat;
-        $this->bird = $bird;
-        $this->fish = $fish;
+        $this->name = $name;
+        $this->icon = $icon;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function setName($name)
+    {
+        return $this->name = $name;
+    }
+
+    public function getIcon()
+    {
+        return $this->name;
+    }
+    public function setIcon($icon)
+    {
+        return $this->icon = $icon;
     }
 }

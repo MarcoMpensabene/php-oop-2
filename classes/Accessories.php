@@ -4,9 +4,9 @@ class Accessories extends Products
     private $type;
     private $materials;
 
-    public function __construct($name, $category, $price, $type, $materials)
+    public function __construct($name, $categories, $price, $type, $materials)
     {
-        parent::__construct($name, $category, $price);
+        parent::__construct($name, $categories, $price);
         $this->type = $type;
         $this->materials = $materials;
     }

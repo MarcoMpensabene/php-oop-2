@@ -1,18 +1,18 @@
 <?php
-require_once __DIR__ . "/classes/Foods.php";
-require_once __DIR__ . "/classes/Games.php";
-require_once __DIR__ . "/classes/Accessories.php";
+require_once __DIR__ . "/Foods.php";
+require_once __DIR__ . "/Games.php";
+require_once __DIR__ . "/Accessories.php";
 
 class Products
 {
     private $name;
-    private $category;
+    private $categories;
     private $price;
 
-    public function __construct($name, $category, $price)
+    public function __construct(string $name, $categories,  string $price)
     {
         $this->name = $name;
-        $this->category = $category;
+        $this->categories = $categories;
         $this->price = $price;
     }
 
@@ -26,13 +26,13 @@ class Products
     }
 
 
-    public function getCategory()
+    public function getCategories()
     {
-        return $this->category;
+        return $this->categories;
     }
-    public function setCategory($category)
+    public function setCategories($categories)
     {
-        return $this->category = $category;
+        return $this->categories = $categories;
     }
 
     public function getPrice()

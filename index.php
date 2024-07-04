@@ -72,55 +72,56 @@ $productList = [$prodottoOne, $prodottoTwo, $prodottoThree, $prodottoFour, $prod
             </h2>
 
             <?php foreach ($productList as $prodotto) : ?>
-            <?php if ($prodotto instanceof Foods) { ?>
-            <article class="col-4 mb-3">
+                <?php if ($prodotto instanceof Foods) { ?>
+                    <article class="col-4 mb-3">
 
-                <div class="card h-100">
-                    <img src="<?php echo $prodotto->getImg(); ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h2> <?php echo $prodotto->getName() ?></h2>
-                        <div class="mb-2">
-                            <i class="fa-solid fa-<?php echo $prodotto->getCategories()->getIcon(); ?>"></i>
-                            <span><?php echo $prodotto->getCategories()->getName(); ?></span>
+                        <div class="card h-100">
+                            <img src="<?php echo $prodotto->getImg(); ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h2> <?php echo $prodotto->getName() ?></h2>
+                                <div class="mb-2">
+                                    <i class="fa-solid fa-<?php echo $prodotto->getCategories()->getIcon(); ?>"></i>
+                                    <span><?php echo $prodotto->getCategories()->getName(); ?></span>
+                                </div>
+                                <p>Price : <?php echo $prodotto->getPrice() ?> €</p>
+                            </div>
                         </div>
-                        <p>Price : <?php echo $prodotto->getPrice() ?> €</p>
-                    </div>
-                </div>
-            </article>
-            <?php } elseif ($prodotto instanceof Accessories) {  ?>
+                    </article>
+                <?php } elseif ($prodotto instanceof Accessories) {  ?>
 
-            <article class="col-4 mb-3">
-                <div class="card h-100">
-                    <img src="<?php echo $prodotto->getImg(); ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h2> <?php echo $prodotto->getName() ?></h2>
-                        <div class="mb-2">
-                            <i class="fa-solid fa-<?php echo $prodotto->getCategories()->getIcon(); ?>"></i>
-                            <span><?php echo $prodotto->getCategories()->getName(); ?></span>
+                    <article class="col-4 mb-3">
+                        <div class="card h-100">
+                            <img src="<?php echo $prodotto->getImg(); ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h2> <?php echo $prodotto->getName() ?></h2>
+                                <div class="mb-2">
+                                    <i class="fa-solid fa-<?php echo $prodotto->getCategories()->getIcon(); ?>"></i>
+                                    <span><?php echo $prodotto->getCategories()->getName(); ?></span>
+                                </div>
+                                <p>Price : <?php echo $prodotto->getPrice()  ?>€</p>
+                                <p>Materiale : <?php echo $prodotto->getMaterials() ?></p>
+                                <p class="card-text"> Dimensioni : <?php echo $prodotto->getDimension() ?></p>
+                            </div>
                         </div>
-                        <p>Price : <?php echo $prodotto->getPrice()  ?>€</p>
-                        <p>Materiale : <?php echo $prodotto->getMaterials() ?></p>
-                        <p class="card-text"> Dimensioni : <?php echo $prodotto->getDimension() ?></p>
-                    </div>
-                </div>
-            </article>
-            <?php } elseif ($prodotto instanceof Games) {  ?>
-            <article class="col-4 mb-3">
-                <div class="card ">
-                    <img src="<?php echo $prodotto->getImg(); ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h2> <?php echo $prodotto->getName() ?></h2>
-                        <div class="mb-2">
-                            <i class="fa-solid fa-<?php echo $prodotto->getCategories()->getIcon(); ?>"></i>
-                            <span><?php echo $prodotto->getCategories()->getName(); ?></span>
+                    </article>
+                <?php } elseif ($prodotto instanceof Games) {  ?>
+                    <article class="col-4 mb-3">
+                        <div class="card ">
+                            <img src="<?php echo $prodotto->getImg(); ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h2> <?php echo $prodotto->getName() ?></h2>
+                                <div class="mb-2">
+                                    <i class="fa-solid fa-<?php echo $prodotto->getCategories()->getIcon(); ?>"></i>
+                                    <span><?php echo $prodotto->getCategories()->getName(); ?></span>
+                                </div>
+                                <p>Price : <?php echo $prodotto->getPrice() ?> €</p>
+                                <p>Caratteristica : <?php echo $prodotto->getFeature() ?></p>
+                                <p class="card-text"> Dimensioni : <?php echo $prodotto->getDimension() ?></p>
+                            </div>
                         </div>
-                        <p>Price : <?php echo $prodotto->getPrice() ?> €</p>
-                        <p>Caratteristica : <?php echo $prodotto->getFeature() ?></p>
-                        <p class="card-text"> Dimensioni : <?php echo $prodotto->getDimension() ?></p>
-                    </div>
-                </div>
+                    </article>
                 <?php } ?>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
     </main>
 </body>

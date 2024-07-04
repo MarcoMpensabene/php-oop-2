@@ -84,6 +84,7 @@ $productList = [$prodottoOne, $prodottoTwo, $prodottoThree, $prodottoFour, $prod
                                     <span><?php echo $prodotto->getCategory()->getName(); ?></span>
                                 </div>
                                 <p>Price : <?php echo $prodotto->getPrice() ?> €</p>
+                                <p>Ingredienti : <?php echo $prodotto->getIngridients() ?> </p>
                             </div>
                         </div>
                     </article>

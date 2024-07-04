@@ -4,10 +4,10 @@
  * Class that instance a Product 
  * 
  */
-class Products
+class Product
 {
     private $name;
-    private $categories;
+    private $Category;
     private $price;
     private $productImg;
 
@@ -16,14 +16,14 @@ class Products
      * Undocumented function
      *
      * @param string $name Name of the product 
-     * @param object $categories Instance of the class Categories 
+     * @param object $Category Instance of the class Category 
      * @param string $price Price of the product 
      * @param string $productImg Image of the product
      */
-    public function __construct(string $name, Categories $categories,  string $price, $productImg)
+    public function __construct(string $name, Category $Category,  string $price, $productImg)
     {
         $this->name = $name;
-        $this->categories = $categories;
+        $this->Category = $Category;
         $this->price = $price;
         $this->productImg = $productImg;
     }
@@ -49,14 +49,14 @@ class Products
         return $this->name = $name;
     }
 
-    public function getCategories()
+    public function getCategory()
     {
-        return $this->categories;
+        return $this->Category;
     }
 
-    public function setCategories($categories)
+    public function setCategory($Category)
     {
-        return $this->categories = $categories;
+        return $this->Category = $Category;
     }
     /**
      * Get the product Price

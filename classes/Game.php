@@ -1,12 +1,12 @@
 <?php
-class Games extends Products
+class Games extends Product
 {
     private $feature;
     private $dimensions;
 
-    public function __construct($name, Categories $categories, $price, $productImg,  $feature, $dimensions)
+    public function __construct($name, Category $Category, $price, $productImg,  $feature, $dimensions)
     {
-        parent::__construct($name, $categories, $price, $productImg);
+        parent::__construct($name, $Category, $price, $productImg);
         $this->feature = $feature;
         $this->dimensions = $dimensions;
     }

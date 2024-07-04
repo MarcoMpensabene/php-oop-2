@@ -1,9 +1,9 @@
 <?php
-require_once __DIR__ . "/classes/Products.php";
-require_once __DIR__ . "/classes/Foods.php";
-require_once __DIR__ . "/classes/Games.php";
-require_once __DIR__ . "/classes/Accessories.php";
-require_once __DIR__ . "/classes/Categories.php";
+require_once __DIR__ . "/classes/Product.php";
+require_once __DIR__ . "/classes/Food.php";
+require_once __DIR__ . "/classes/Game.php";
+require_once __DIR__ . "/classes/Accessory.php";
+require_once __DIR__ . "/classes/Category.php";
 
 $urlList = [
     "https://arcaplanet.vtexassets.com/arquivos/ids/300306/Royal-Canin-Mini-Adult-Alimento-Completo-per-Cani-Adulti-di-Piccola-Taglia-10120604-1.jpg",
@@ -26,10 +26,10 @@ $productUrlSix = $urlList[5];
 $productUrlSeven =  $urlList[6];
 $productUrlEight = $urlList[7];
 
-$dog = new Categories('dog', 'Cane');
-$cat = new Categories('cat', 'Gatto');
-$fish = new Categories('fish', 'Pesce');
-$bird = new Categories('kiwi-bird', 'Uccello');
+$dog = new Category('dog', 'Cane');
+$cat = new Category('cat', 'Gatto');
+$fish = new Category('fish', 'Pesce');
+$bird = new Category('kiwi-bird', 'Uccello');
 
 $prodottoOne = new Foods("Royal Canin Mini Adult", $dog, "43.99",  $productUrlOne, "prosciutto e riso", "545");
 $prodottoTwo = new Foods("Almo Nature Holistic Maintenance", $dog, "44.99", $productUrlTwo, "manzo e cereali", "600");
@@ -46,7 +46,7 @@ $productList = [$prodottoOne, $prodottoTwo, $prodottoThree, $prodottoFour, $prod
 
 // var_dump($prodottoOne->getName());
 
-// var_dump($prodottoOne->getCategories());
+// var_dump($prodottoOne->getCategory());
 
 ?>
 
@@ -80,8 +80,8 @@ $productList = [$prodottoOne, $prodottoTwo, $prodottoThree, $prodottoFour, $prod
                             <div class="card-body">
                                 <h2> <?php echo $prodotto->getName() ?></h2>
                                 <div class="mb-2">
-                                    <i class="fa-solid fa-<?php echo $prodotto->getCategories()->getIcon(); ?>"></i>
-                                    <span><?php echo $prodotto->getCategories()->getName(); ?></span>
+                                    <i class="fa-solid fa-<?php echo $prodotto->getCategory()->getIcon(); ?>"></i>
+                                    <span><?php echo $prodotto->getCategory()->getName(); ?></span>
                                 </div>
                                 <p>Price : <?php echo $prodotto->getPrice() ?> €</p>
                             </div>
@@ -95,8 +95,8 @@ $productList = [$prodottoOne, $prodottoTwo, $prodottoThree, $prodottoFour, $prod
                             <div class="card-body">
                                 <h2> <?php echo $prodotto->getName() ?></h2>
                                 <div class="mb-2">
-                                    <i class="fa-solid fa-<?php echo $prodotto->getCategories()->getIcon(); ?>"></i>
-                                    <span><?php echo $prodotto->getCategories()->getName(); ?></span>
+                                    <i class="fa-solid fa-<?php echo $prodotto->getCategory()->getIcon(); ?>"></i>
+                                    <span><?php echo $prodotto->getCategory()->getName(); ?></span>
                                 </div>
                                 <p>Price : <?php echo $prodotto->getPrice()  ?>€</p>
                                 <p>Materiale : <?php echo $prodotto->getMaterials() ?></p>
@@ -111,8 +111,8 @@ $productList = [$prodottoOne, $prodottoTwo, $prodottoThree, $prodottoFour, $prod
                             <div class="card-body">
                                 <h2> <?php echo $prodotto->getName() ?></h2>
                                 <div class="mb-2">
-                                    <i class="fa-solid fa-<?php echo $prodotto->getCategories()->getIcon(); ?>"></i>
-                                    <span><?php echo $prodotto->getCategories()->getName(); ?></span>
+                                    <i class="fa-solid fa-<?php echo $prodotto->getCategory()->getIcon(); ?>"></i>
+                                    <span><?php echo $prodotto->getCategory()->getName(); ?></span>
                                 </div>
                                 <p>Price : <?php echo $prodotto->getPrice() ?> €</p>
                                 <p>Caratteristica : <?php echo $prodotto->getFeature() ?></p>

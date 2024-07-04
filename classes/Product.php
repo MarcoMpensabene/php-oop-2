@@ -7,7 +7,7 @@
 class Product
 {
     private $name;
-    private $Category;
+    private $category;
     private $price;
     private $productImg;
 
@@ -20,10 +20,10 @@ class Product
      * @param string $price Price of the product 
      * @param string $productImg Image of the product
      */
-    public function __construct(string $name, Category $Category,  string $price, $productImg)
+    public function __construct(string $name, Category $category,  string $price, $productImg)
     {
         $this->name = $name;
-        $this->Category = $Category;
+        $this->category = $category;
         $this->price = $price;
         $this->productImg = $productImg;
     }
@@ -51,12 +51,12 @@ class Product
 
     public function getCategory()
     {
-        return $this->Category;
+        return $this->category;
     }
 
-    public function setCategory($Category)
+    public function setCategory($category)
     {
-        return $this->Category = $Category;
+        return $this->category = $category;
     }
     /**
      * Get the product Price
